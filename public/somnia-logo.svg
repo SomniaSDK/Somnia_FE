@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="24" cy="24" r="22" fill="url(#paint0_linear)" />
+  <path d="M30 16C26 20 24 28 18 30C24 30 30 26 30 16Z" fill="#ffffff" />
+  <defs>
+    <linearGradient id="paint0_linear" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5B4CFF" />
+      <stop offset="1" stop-color="#833FFF" />
+    </linearGradient>
+  </defs>
+</svg>
