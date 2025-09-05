@@ -1,104 +1,147 @@
-'use client';
-
 import React from 'react';
 import styled from 'styled-components';
 
-const SearchInput: React.FC = () => {
+const Input = () => {
   return (
     <StyledWrapper>
-      <label className="search-label">
-        <input type="text" name="text" className="input" required placeholder="Ask or search..." />
-        <kbd className="slash-icon">K</kbd>
-        <svg className="search-icon" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width={512} height={512} x={0} y={0} viewBox="0 0 56.966 56.966" style={{background: 'transparent'}} xmlSpace="preserve">
-          <g>
-            <path d="M55.146 51.887 41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z" fill="currentColor" data-original="#000000" />
-          </g>
-        </svg>
-      </label>
+      <input type="text" className="search-input" placeholder="Search..." />
     </StyledWrapper>
   );
 }
 
 const StyledWrapper = styled.div`
-  .search-label {
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
+  .search-container {
     position: relative;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #3D3D3D;
-    padding: 7px;
-    cursor: text;
-    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, #5c5c5c, #f5f5f5);
+    padding: 30px;
+    border-radius: 15px;
+    transition: background 0.3s ease;
+    perspective: 1000px;
   }
 
-  .search-label:hover {
-    border-color: gray;
-  }
-
-  .search-label:focus-within {
-    background: #464646;
-    border-color: gray;
-  }
-
-  .search-label input {
-    outline: none;
-    width: 100%;
-    border: none;
-    background: none;
-    color: rgb(162, 162, 162);
-    font-size: 13px;
-  }
-
-  .search-label input:focus+.slash-icon,
-  .search-label input:valid+.slash-icon {
-    display: none;
-  }
-
-  .search-label input:valid~.search-icon {
-    display: block;
-  }
-
-  .search-label input:valid {
-    width: calc(100% - 22px);
-    transform: translateX(20px);
-  }
-
-  .search-label svg,
-  .slash-icon {
+  .label {
     position: absolute;
-    right: 7px;
-    color: #7e7e7e;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease,
+      text-shadow 0.3s ease;
+  }
+
+  .search-input {
+    position: relative;
+    width: 260px;
+    height: 40px;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: linear-gradient(to right, #d9d9d9, #f8f8f8);
+    font-size: 16px;
+    color: #555;
+    outline: none;
+    transition: box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease,
+      border-color 0.3s ease, transform 0.3s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.2) inset; /* Improved box-shadow for a realistic feel */
+  }
+
+  .search-input:focus,
+  .search-input:not(:placeholder-shown) {
+    border-color: #4caf50;
+    background: linear-gradient(to right, #a9aaf1ff, #f0f0f0);
+    transform: rotateX(20deg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2) inset; /* Improved box-shadow on focus */
+  }
+
+  .search-input:focus + .label,
+  .search-input:not(:placeholder-shown) + .label {
+    transform: translateY(-120%) scale(0.8);
+    font-size: 12px;
+    color: #4caf50;
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.6);
+  }
+
+  .search-input:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2) inset; /* Improved box-shadow on hover */
+    background: linear-gradient(to right, #e6e6e6, #f9f9f9);
+    border-color: #999;
+  }
+
+  .clear-button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #999;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  }
+
+  .clear-button:hover {
+    color: #4caf50;
+    transform: scale(1.1);
+  }
+
+  .search-input:not(:focus):not(:placeholder-shown) + .clear-button {
+    opacity: 1;
+  }
+
+  .shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    );
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .search-input:focus + .shine {
+    opacity: 1;
   }
 
   .search-icon {
-    display: none;
-    width: 12px;
-    height: auto;
-  }
-
-  .slash-icon {
-    border: 1px solid #393838;
-    background: linear-gradient(-225deg, #343434, #6d6d6d);
-    border-radius: 3px;
-    text-align: center;
-    box-shadow: inset 0 -2px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93), 0 1px 2px 1px rgba(28, 28, 29, 0.4);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #999;
     cursor: pointer;
-    font-size: 11px;
-    width: 14px;
-    height: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+    border-radius: 50%;
   }
 
-  .slash-icon:active {
-    box-shadow: inset 0 1px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93), 0 1px 2px 0 rgba(28, 28, 29, 0.4);
-    text-shadow: 0 1px 0 #7e7e7e;
-    color: transparent;
+  .search-input:focus + .search-icon {
+    color: #4caf50;
+    transform: translateY(-50%) scale(1.1);
+    filter: drop-shadow(0 0 5px rgba(76, 175, 80, 0.6));
   }
-`;
 
-export default SearchInput;
+  @keyframes inputPulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .search-input:focus {
+    animation: inputPulse 0.5s ease;
+  }`;
+
+export default Input;
