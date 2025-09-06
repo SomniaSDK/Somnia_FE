@@ -80,9 +80,9 @@ const SearchButton = () => {
           </div>
         </button>
       ) : (
-        <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-start justify-center pt-12 search-modal backdrop-blur-sm">
+        <div className="fixed inset-0 bg-transparent z-50 flex items-start justify-center pt-12 search-modal backdrop-blur-md">
           <div 
-            className="w-full max-w-xl bg-[#1d1f29] rounded-xl shadow-2xl overflow-hidden search-modal-content border border-gray-800 search-expand-animation"
+            className="w-full max-w-xl bg-[#1d1f29]/90 rounded-xl shadow-2xl overflow-hidden search-modal-content border border-gray-800/50 search-expand-animation backdrop-blur-sm"
             style={{
               '--search-original-top': `${buttonPosition.top}px`,
               '--search-original-left': `${buttonPosition.left}px`,

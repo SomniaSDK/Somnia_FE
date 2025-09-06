@@ -87,6 +87,8 @@ body {
 
 .search-modal {
   animation: fadeIn 0.2s ease-out;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .search-expand-animation {
