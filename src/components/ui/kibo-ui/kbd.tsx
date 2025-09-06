@@ -44,6 +44,6 @@ export type KbdKeyProps = Omit<ComponentProps<"kbd">, "aria-label"> & {
   "aria-label"?: keyof typeof Key | (string & {});
 };
 
-export const KbdKey = ({ className, ...props }: KbdKeyProps) => (
+export const KbdKey = ({ ...props }: KbdKeyProps) => (
   <kbd {...props} />
 );

@@ -1,7 +1,5 @@
 'use client';
 
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div className="max-w-5xl px-6 py-20">
@@ -85,7 +83,7 @@ export default function Home() {
               </li>
               <li>
                 <strong>Generate:</strong> 
-                <code className="bg-gray-800 px-2 py-1 ml-2 rounded-sm">somnia generate "ERC721 NFT with royalties"</code>
+                <code className="bg-gray-800 px-2 py-1 ml-2 rounded-sm">somnia generate &quot;ERC721 NFT with royalties&quot;</code>
               </li>
               <li>
                 <strong>Deploy:</strong> 
