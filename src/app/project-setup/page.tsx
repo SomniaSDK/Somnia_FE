@@ -38,7 +38,7 @@ export default function ProjectSetupPage() {
                 <div>
                   <h4 className="font-medium">Install Somnia SDK globally</h4>
                   <p className="text-sm text-gray-300 mb-2">
-                    This will install the Somnia CLI tool that you'll use to interact with the blockchain.
+                    This will install the Somnia CLI tool that you&apos;ll use to interact with the blockchain.
                   </p>
                   <div className="bg-gray-800 p-3 rounded-md my-2">
                     <div className="flex justify-between items-center mb-1">
@@ -151,7 +151,7 @@ export default function ProjectSetupPage() {
                     <ul className="list-disc pl-5 text-sm space-y-2">
                       <li><code className="bg-gray-700 px-1 py-0.5 rounded">npm install</code> or <code className="bg-gray-700 px-1 py-0.5 rounded">npm i</code> - Standard installation that respects the dependency versions in package.json</li>
                       <li><code className="bg-gray-700 px-1 py-0.5 rounded">npm install --force</code> - Forces installation even when there are conflicting dependency versions</li>
-                      <li><code className="bg-gray-700 px-1 py-0.5 rounded">npm install --legacy-peer-deps</code> - Ignores peer dependency conflicts and installs packages in a way that's compatible with npm versions prior to v7</li>
+                      <li><code className="bg-gray-700 px-1 py-0.5 rounded">npm install --legacy-peer-deps</code> - Ignores peer dependency conflicts and installs packages in a way that&apos;s compatible with npm versions prior to v7</li>
                     </ul>
                   </div>
                 </div>
