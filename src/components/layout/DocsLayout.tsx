@@ -89,16 +89,29 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
               </ul>
             </div>
             
+            {/* Wallet Management section */}
+            <div className="mb-8">
+              <div className="flex items-center mb-4">
+                <span className="text-white mr-2">💳</span>
+                <h3 className="text-white font-medium">Wallet Management</h3>
+              </div>
+              
+              <div className="space-y-3 ml-2 pl-4 border-l border-gray-800">
+                <Link href="/wallet/importing-wallet" className="block text-gray-400 hover:text-white transition-colors">Importing Wallet</Link>
+              </div>
+            </div>
+            
             {/* DEVELOPER section */}
             <div className="mb-8">
               <div className="flex items-center mb-4">
                 <span className="text-white mr-2">💻</span>
-                <h3 className="text-white font-medium">DEVELOPER</h3>
+                <h3 className="text-white font-medium">DEVELOPING</h3>
               </div>
               
               <div className="space-y-3 ml-2 pl-4 border-l border-gray-800">
                 <Link href="#" className="block text-gray-400 hover:text-white transition-colors">Network Info</Link>
                 <Link href="#" className="block text-gray-400 hover:text-white transition-colors">Smart Contracts</Link>
+                <Link href="/developing/ai-contract" className="block text-gray-400 hover:text-white transition-colors">🤖 AI Contract Generation</Link>
                 <div className="flex items-center justify-between">
                   <Link href="#" className="block text-gray-400 hover:text-white transition-colors">Tutorials</Link>
                   <span className="text-gray-600">›</span>
