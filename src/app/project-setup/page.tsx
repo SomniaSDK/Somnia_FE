@@ -1,4 +1,5 @@
 import React from 'react';
+import CopyButton from '@/components/CopyButton';
 
 export default function ProjectSetupPage() {
   return (
@@ -12,12 +13,151 @@ export default function ProjectSetupPage() {
           and installing the Somnia SDK for your project.
         </p>
         
-        <div className="bg-gray-800 p-4 rounded-md my-6">
-          <p className="text-yellow-300">⚠️ Coming Soon</p>
-          <p className="text-gray-300 mt-2">
-            The detailed setup instructions are being prepared and will be available soon.
-            Please check back later or refer to the GitHub repository for preliminary setup information.
-          </p>
+        <div className="space-y-8">
+          <section>
+            <h3 className="text-xl font-semibold mb-4">Setting Up a New Somnia Project</h3>
+            <p className="mb-4">
+              Follow these steps to create a new Somnia blockchain project from scratch:
+            </p>
+            
+            <ol className="list-decimal pl-6 space-y-5">
+              <li>
+                <div>
+                  <h4 className="font-medium">Create a new project directory</h4>
+                  <div className="bg-gray-800 p-3 rounded-md my-2">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-gray-400 text-xs">Terminal</span>
+                      <CopyButton textToCopy="mkdir somnia-project && cd somnia-project" />
+                    </div>
+                    <pre className="text-green-300">mkdir somnia-project && cd somnia-project</pre>
+                  </div>
+                </div>
+              </li>
+              
+              <li>
+                <div>
+                  <h4 className="font-medium">Install Somnia SDK globally</h4>
+                  <p className="text-sm text-gray-300 mb-2">
+                    This will install the Somnia CLI tool that you'll use to interact with the blockchain.
+                  </p>
+                  <div className="bg-gray-800 p-3 rounded-md my-2">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-gray-400 text-xs">Terminal</span>
+                      <CopyButton textToCopy="npm i -g somnia-cli-devkit@latest" />
+                    </div>
+                    <pre className="text-green-300">npm i -g somnia-cli-devkit@latest</pre>
+                  </div>
+                </div>
+              </li>
+              
+              <li>
+                <div>
+                  <h4 className="font-medium">Create package.json file</h4>
+                  <p className="text-sm text-gray-300 mb-2">
+                    Create a new file named <code className="bg-gray-700 px-1 py-0.5 rounded">package.json</code> and add the following content:
+                  </p>
+                  <div className="bg-gray-800 p-3 rounded-md my-2 relative">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-gray-400 text-xs">package.json</span>
+                      <CopyButton textToCopy={`{
+  "name": "somnia-project",
+  "version": "1.0.0",
+  "description": "Somnia blockchain smart contract project",
+  "type": "module",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.js"
+  },
+  "devDependencies": {
+    "hardhat": "^3.0.3",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0"
+  }
+}`} />
+                    </div>
+                    <pre className="text-green-300 overflow-x-auto whitespace-pre-wrap">{`{
+  "name": "somnia-project",
+  "version": "1.0.0",
+  "description": "Somnia blockchain smart contract project",
+  "type": "module",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.js"
+  },
+  "devDependencies": {
+    "hardhat": "^3.0.3",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0"
+  }
+}`}</pre>
+                  </div>
+                </div>
+              </li>
+              
+              <li>
+                <div>
+                  <h4 className="font-medium">Install dependencies</h4>
+                  <p className="text-sm text-gray-300 mb-2">
+                    You have several options to install the dependencies. Choose one of the following commands:
+                  </p>
+                  <div className="grid grid-cols-1 gap-3">
+                    <div>
+                      <p className="text-sm text-white mb-1">Standard installation:</p>
+                      <div className="bg-gray-800 p-3 rounded-md">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-gray-400 text-xs">Terminal</span>
+                          <CopyButton textToCopy="npm install" />
+                        </div>
+                        <pre className="text-green-300">npm install</pre>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-white mb-1">Alternative (shorthand):</p>
+                      <div className="bg-gray-800 p-3 rounded-md">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-gray-400 text-xs">Terminal</span>
+                          <CopyButton textToCopy="npm i" />
+                        </div>
+                        <pre className="text-green-300">npm i</pre>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-white mb-1">If you encounter dependency conflicts:</p>
+                      <div className="bg-gray-800 p-3 rounded-md">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-gray-400 text-xs">Terminal</span>
+                          <CopyButton textToCopy="npm install --force" />
+                        </div>
+                        <pre className="text-green-300">npm install --force</pre>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-white mb-1">For legacy projects or if other methods fail:</p>
+                      <div className="bg-gray-800 p-3 rounded-md">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-gray-400 text-xs">Terminal</span>
+                          <CopyButton textToCopy="npm install --legacy-peer-deps" />
+                        </div>
+                        <pre className="text-green-300">npm install --legacy-peer-deps</pre>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-blue-900/30 border border-blue-500/50 rounded-md p-3 mt-4">
+                    <h5 className="text-blue-300 font-medium mb-1">Installation Options Explained</h5>
+                    <ul className="list-disc pl-5 text-sm space-y-2">
+                      <li><code className="bg-gray-700 px-1 py-0.5 rounded">npm install</code> or <code className="bg-gray-700 px-1 py-0.5 rounded">npm i</code> - Standard installation that respects the dependency versions in package.json</li>
+                      <li><code className="bg-gray-700 px-1 py-0.5 rounded">npm install --force</code> - Forces installation even when there are conflicting dependency versions</li>
+                      <li><code className="bg-gray-700 px-1 py-0.5 rounded">npm install --legacy-peer-deps</code> - Ignores peer dependency conflicts and installs packages in a way that's compatible with npm versions prior to v7</li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </section>
         </div>
       </section>
     </div>
