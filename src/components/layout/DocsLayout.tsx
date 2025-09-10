@@ -98,6 +98,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
               
               <div className="space-y-3 ml-2 pl-4 border-l border-gray-800">
                 <Link href="/wallet/importing-wallet" className="block text-gray-400 hover:text-white transition-colors">Importing Wallet</Link>
+                <Link href="/wallet/wallet-analysis" className="block text-gray-400 hover:text-white transition-colors">Wallet Analysis</Link>
               </div>
             </div>
             
@@ -109,9 +110,10 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
               </div>
               
               <div className="space-y-3 ml-2 pl-4 border-l border-gray-800">
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">Network Info</Link>
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">Smart Contracts</Link>
                 <Link href="/developing/ai-contract" className="block text-gray-400 hover:text-white transition-colors">🤖 AI Contract Generation</Link>
+                <Link href="/developing/deploy-contracts" className="block text-gray-400 hover:text-white transition-colors">🚀 Deploy Contracts</Link>
+                <Link href="/developing/call-contract" className="block text-gray-400 hover:text-white transition-colors">📞 Call Contract Functions</Link>
+                <Link href="/developing/network-commands" className="block text-gray-400 hover:text-white transition-colors">🌐 Network Commands</Link>
                 <div className="flex items-center justify-between">
                   <Link href="#" className="block text-gray-400 hover:text-white transition-colors">Tutorials</Link>
                   <span className="text-gray-600">›</span>
