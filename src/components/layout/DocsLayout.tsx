@@ -115,23 +115,12 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/developing/call-contract" className="block text-gray-400 hover:text-white transition-colors">📞 Call Contract Functions</Link>
                 <Link href="/developing/network-commands" className="block text-gray-400 hover:text-white transition-colors">🌐 Network Commands</Link>
                 <div className="flex items-center justify-between">
-                  <Link href="#" className="block text-gray-400 hover:text-white transition-colors">Tutorials</Link>
-                  <span className="text-gray-600">›</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <Link href="#" className="block text-gray-400 hover:text-white transition-colors">Infrastructure/Dev Tools</Link>
                   <span className="text-gray-600">›</span>
                 </div>
               </div>
             </div>
             
-            {/* Powered by GitBook */}
-            <div className="pt-4 mt-8 border-t border-gray-800">
-              <Link href="#" className="flex items-center text-gray-400 hover:text-white transition-colors">
-                <span className="mr-2">📚</span>
-                <span>Powered by GitBook</span>
-              </Link>
-            </div>
+            
           </div>
         </div>
         
