@@ -20,9 +20,13 @@ export default function MCPServerPage() {
             and register it with VS Code. Follow these steps:
           </p>
           
+          {/* Step 1 */}
           <div className="mb-6">
             <h4 className="text-lg font-medium mb-2">Step 1: Create a configuration file</h4>
-            <p className="mb-2">Create a file named <code className="bg-gray-700 px-1 py-0.5 rounded">somnia-mcp-server.json</code> with the following content:</p>
+            <p className="mb-2">
+              Create a file named <code className="bg-gray-700 px-1 py-0.5 rounded">somnia-mcp-server.json</code> 
+              with the following content:
+            </p>
             
             <div className="bg-gray-800 p-4 rounded-md my-3 relative">
               <div className="absolute top-2 right-3">
@@ -49,8 +53,24 @@ export default function MCPServerPage() {
             </div>
           </div>
           
+          {/* Step 2 */}
           <div className="mb-6">
-            <h4 className="text-lg font-medium mb-2">Step 2: Register the MCP server in VS Code</h4>
+            <h4 className="text-lg font-medium mb-2">Step 2: Using MCP Server with Cursor</h4>
+            <p className="mb-4">
+              If you are using <span className="font-semibold">Cursor</span> instead of VS Code, you can 
+              also integrate the Somnia MCP server:
+            </p>
+            <ol className="list-decimal pl-6 space-y-2">
+              <li>Save the same <code className="bg-gray-700 px-1 py-0.5 rounded">somnia-mcp-server.json</code> file in your project root.</li>
+              <li>Open Cursor and go to <span className="font-medium">Settings &gt; Features &gt; MCP Servers</span>.</li>
+              <li>Click <span className="font-medium">Add Server</span> and select your <code className="bg-gray-700 px-1 py-0.5 rounded">somnia-mcp-server.json</code>.</li>
+              <li>Restart Cursor or reload the workspace to apply the changes.</li>
+              <li>You should now see the Somnia MCP server available under Cursor’s AI integrations.</li>
+            </ol>
+          </div>
+          <h2>Or</h2>
+          <div className="mb-6">
+            <h4 className="text-lg font-medium mb-2">Register the MCP server in VS Code</h4>
             <ol className="list-decimal pl-6 space-y-2">
               <li>Save the JSON configuration above as <code className="bg-gray-700 px-1 py-0.5 rounded">somnia-mcp-server.json</code> in your project root or <code className="bg-gray-700 px-1 py-0.5 rounded">.vscode</code> folder.</li>
               <li>Open VS Code and press <kbd className="bg-gray-700 px-1 py-0.5 rounded">Ctrl+Shift+P</kbd> (Windows/Linux) or <kbd className="bg-gray-700 px-1 py-0.5 rounded">Cmd+Shift+P</kbd> (Mac) to open the Command Palette.</li>
@@ -60,6 +80,7 @@ export default function MCPServerPage() {
             </ol>
           </div>
           
+          {/* Step 3 */}
           <div className="mb-6">
             <h4 className="text-lg font-medium mb-2">Step 3: Verify the installation</h4>
             <p className="mb-2">To confirm that the MCP server is properly registered:</p>

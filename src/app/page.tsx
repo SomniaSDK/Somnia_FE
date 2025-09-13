@@ -72,30 +72,6 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          
-          <h3 className="text-2xl font-semibold mb-4 mt-8">Simple Workflow</h3>
-          
-          <div className="bg-[#1a1c25] p-5 rounded-lg border border-gray-800 mb-6">
-            <ol className="list-decimal pl-6 space-y-3">
-              <li>
-                <strong>Initialize:</strong> 
-                <code className="bg-gray-800 px-2 py-1 ml-2 rounded-sm">somnia init my-dapp</code>
-              </li>
-              <li>
-                <strong>Generate:</strong> 
-                <code className="bg-gray-800 px-2 py-1 ml-2 rounded-sm">somnia generate &quot;ERC721 NFT with royalties&quot;</code>
-              </li>
-              <li>
-                <strong>Deploy:</strong> 
-                <code className="bg-gray-800 px-2 py-1 ml-2 rounded-sm">somnia deploy contracts/NFT.sol --network testnet</code>
-              </li>
-              <li>
-                <strong>Interact:</strong> 
-                <code className="bg-gray-800 px-2 py-1 ml-2 rounded-sm">somnia call NFT.totalSupply</code>
-              </li>
-            </ol>
-          </div>
-          
           <p className="text-lg mt-6">
             For more information, visit the GitHub repository: <a href="https://github.com/SomniaSDK/SomniaSDK" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://github.com/SomniaSDK/SomniaSDK</a>
           </p>

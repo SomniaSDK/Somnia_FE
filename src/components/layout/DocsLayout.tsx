@@ -70,7 +70,6 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             {/* Project Setup section */}
             <div className="mb-8">
               <div className="flex items-center mb-4">
-                <span className="text-orange-500 mr-2">🔥</span>
                 <h3 className="text-white font-medium">Project Setup</h3>
               </div>
               <ul className="pl-6 space-y-2">
@@ -81,7 +80,6 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             {/* MCP Server section */}
             <div className="mb-8">
               <div className="flex items-center mb-4">
-                <span className="text-white mr-2">💻</span>
                 <h3 className="text-white font-medium">MCP Server</h3>
               </div>
               <ul className="pl-6 space-y-2">
@@ -92,7 +90,6 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             {/* Wallet Management section */}
             <div className="mb-8">
               <div className="flex items-center mb-4">
-                <span className="text-white mr-2">💳</span>
                 <h3 className="text-white font-medium">Wallet Management</h3>
               </div>
               
@@ -105,22 +102,16 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             {/* DEVELOPER section */}
             <div className="mb-8">
               <div className="flex items-center mb-4">
-                <span className="text-white mr-2">💻</span>
                 <h3 className="text-white font-medium">DEVELOPING</h3>
               </div>
               
               <div className="space-y-3 ml-2 pl-4 border-l border-gray-800">
-                <Link href="/developing/ai-contract" className="block text-gray-400 hover:text-white transition-colors">🤖 AI Contract Generation</Link>
-                <Link href="/developing/deploy-contracts" className="block text-gray-400 hover:text-white transition-colors">🚀 Deploy Contracts</Link>
-                <Link href="/developing/call-contract" className="block text-gray-400 hover:text-white transition-colors">📞 Call Contract Functions</Link>
-                <Link href="/developing/network-commands" className="block text-gray-400 hover:text-white transition-colors">🌐 Network Commands</Link>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-600">›</span>
-                </div>
+                <Link href="/developing/ai-contract" className="block text-gray-400 hover:text-white transition-colors">AI Contract Generation</Link>
+                <Link href="/developing/deploy-contracts" className="block text-gray-400 hover:text-white transition-colors">Deploy Contracts</Link>
+                <Link href="/developing/call-contract" className="block text-gray-400 hover:text-white transition-colors">Call Contract Functions</Link>
+                <Link href="/developing/network-commands" className="block text-gray-400 hover:text-white transition-colors">Network Commands</Link>
               </div>
             </div>
-            
-            
           </div>
         </div>
         
