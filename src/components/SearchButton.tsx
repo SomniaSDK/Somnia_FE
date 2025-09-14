@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 
 // Define navigation items structure
@@ -152,25 +152,24 @@ const SearchButton = () => {
     }
   }, []);
 
-  // Save recent search
-  const saveRecentSearch = (query: string) => {
-    if (!query.trim()) return;
-    
-    const newRecentSearches = [
-      query, 
-      ...recentSearches.filter(s => s !== query)
-    ].slice(0, 5);
-    
-    setRecentSearches(newRecentSearches);
-    localStorage.setItem('recentSearches', JSON.stringify(newRecentSearches));
-  };
+  // Function removed - logic moved directly into navigateTo
   
-  // Handle navigation
-  const navigateTo = (path: string) => {
-    saveRecentSearch(query);
+  // Handle navigation with useCallback to prevent dependency changes
+  const navigateTo = useCallback((path: string) => {
+    // Inline the saveRecentSearch logic to avoid circular dependencies
+    if (query.trim()) {
+      const newRecentSearches = [
+        query, 
+        ...recentSearches.filter(s => s !== query)
+      ].slice(0, 5);
+      
+      setRecentSearches(newRecentSearches);
+      localStorage.setItem('recentSearches', JSON.stringify(newRecentSearches));
+    }
+    
     setIsExpanded(false);
     router.push(path);
-  };
+  }, [query, recentSearches, router]);
   
   // Reset selected index when results change
   useEffect(() => {
@@ -204,7 +203,10 @@ const SearchButton = () => {
           setSelectedIndex(prev => (prev - 1 + searchResults.length) % searchResults.length);
         } else if (e.key === 'Enter' && selectedIndex >= 0 && selectedIndex < searchResults.length) {
           e.preventDefault();
-          navigateTo(searchResults[selectedIndex].path);
+          const selectedResult = searchResults[selectedIndex];
+          if (selectedResult) {
+            navigateTo(selectedResult.path);
+          }
         }
       }
     };
@@ -223,7 +225,7 @@ const SearchButton = () => {
       window.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isExpanded, isMac]);
+  }, [isExpanded, isMac, navigateTo, searchResults, selectedIndex]);
 
   return (
     <div ref={searchContainerRef} className={`${isExpanded ? 'fixed inset-0 z-50' : 'relative w-full'}`}>
