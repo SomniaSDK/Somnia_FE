@@ -18,7 +18,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             <div className="flex items-center">
               <div className="flex items-center">
                 <Image
-                  src="/Somnia_logo_color.png"
+                  src="/new.png"
                   alt="Somnia Logo"
                   width={28}
                   height={28}
@@ -127,7 +127,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <Image
-                src="/Somnia_logo_color.png"
+                src="/new.png"
                 alt="Somnia Logo"
                 width={24}
                 height={24}
