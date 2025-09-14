@@ -1,7 +1,4 @@
 # Somnia SDK Documentation
-
-![Somnia SDK](public/file.svg)
-
 ## Overview
 
 This repository contains the official documentation for the Somnia SDK, a comprehensive blockchain development platform. The documentation is built with Next.js 15.5.2 and includes guides, examples, and references for developing with the Somnia blockchain ecosystem.
