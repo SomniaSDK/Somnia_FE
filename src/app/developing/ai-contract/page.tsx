@@ -5,7 +5,7 @@ import CopyButton from '@/components/CopyButton';
 export default function AIContractGeneration() {
   return (
     <div className="max-w-5xl px-6 py-20">
-      <h1 className="text-3xl font-bold mb-6">🤖 AI Contract Generation</h1>
+      <h1 className="text-3xl font-bold mb-6">AI Contract Generation</h1>
       
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4">Smart Contracts with AI</h2>
@@ -36,7 +36,9 @@ export default function AIContractGeneration() {
               <div className="bg-gray-800 rounded-md overflow-hidden">
                 <div className="bg-gray-700 px-4 py-2 flex justify-between items-center">
                   <span className="font-medium text-blue-300">NFT Contract Example</span>
-                  <CopyButton textToCopy={'somnia contract create --prompt "Simple NFT minter"'} />
+                  <div className="w-9 h-9 flex items-center justify-center">
+                    <CopyButton textToCopy={'somnia contract create --prompt "Simple NFT minter"'} />
+                  </div>
                 </div>
                 <div className="p-4">
                   <pre className="text-green-300 overflow-x-auto">somnia contract create --prompt &quot;Simple NFT minter&quot;</pre>
@@ -50,7 +52,9 @@ export default function AIContractGeneration() {
               <div className="bg-gray-800 rounded-md overflow-hidden">
                 <div className="bg-gray-700 px-4 py-2 flex justify-between items-center">
                   <span className="font-medium text-blue-300">ERC20 Token Example</span>
-                  <CopyButton textToCopy={'somnia contract create --prompt "ERC20 token with 1M supply"'} />
+                  <div className="w-9 h-9 flex items-center justify-center">
+                    <CopyButton textToCopy={'somnia contract create --prompt "ERC20 token with 1M supply"'} />
+                  </div>
                 </div>
                 <div className="p-4">
                   <pre className="text-green-300 overflow-x-auto">somnia contract create --prompt &quot;ERC20 token with 1M supply&quot;</pre>
@@ -64,7 +68,9 @@ export default function AIContractGeneration() {
               <div className="bg-gray-800 rounded-md overflow-hidden">
                 <div className="bg-gray-700 px-4 py-2 flex justify-between items-center">
                   <span className="font-medium text-blue-300">Voting Contract Example</span>
-                  <CopyButton textToCopy={'somnia contract create --prompt "Voting contract for DAO"'} />
+                  <div className="w-9 h-9 flex items-center justify-center">
+                    <CopyButton textToCopy={'somnia contract create --prompt "Voting contract for DAO"'} />
+                  </div>
                 </div>
                 <div className="p-4">
                   <pre className="text-green-300 overflow-x-auto">somnia contract create --prompt &quot;Voting contract for DAO&quot;</pre>
@@ -78,7 +84,9 @@ export default function AIContractGeneration() {
               <div className="bg-gray-800 rounded-md overflow-hidden">
                 <div className="bg-gray-700 px-4 py-2 flex justify-between items-center">
                   <span className="font-medium text-blue-300">MultiSig Wallet Example</span>
-                  <CopyButton textToCopy={'somnia contract create --prompt "MultiSig wallet"'} />
+                  <div className="w-9 h-9 flex items-center justify-center">
+                    <CopyButton textToCopy={'somnia contract create --prompt "MultiSig wallet"'} />
+                  </div>
                 </div>
                 <div className="p-4">
                   <pre className="text-green-300 overflow-x-auto">somnia contract create --prompt &quot;MultiSig wallet&quot;</pre>
@@ -109,7 +117,9 @@ export default function AIContractGeneration() {
                 <div className="bg-gray-800 rounded-md overflow-hidden mb-4">
                   <div className="bg-gray-700 px-4 py-2 flex justify-between items-center">
                     <span className="font-medium text-blue-300">Windows PowerShell</span>
-                    <CopyButton textToCopy={'$env:GROQ_API_KEY = "your-api-key-here"'} />
+                    <div className="w-9 h-9 flex items-center justify-center">
+                      <CopyButton textToCopy={'$env:GROQ_API_KEY = "your-api-key-here"'} />
+                    </div>
                   </div>
                   <div className="p-4">
                     <pre className="text-green-300">$env:GROQ_API_KEY = &quot;your-api-key-here&quot;</pre>
@@ -119,7 +129,9 @@ export default function AIContractGeneration() {
                 <div className="bg-gray-800 rounded-md overflow-hidden">
                   <div className="bg-gray-700 px-4 py-2 flex justify-between items-center">
                     <span className="font-medium text-blue-300">Linux/macOS</span>
-                    <CopyButton textToCopy={'export GROQ_API_KEY="your-api-key-here"'} />
+                    <div className="w-9 h-9 flex items-center justify-center">
+                      <CopyButton textToCopy={'export GROQ_API_KEY="your-api-key-here"'} />
+                    </div>
                   </div>
                   <div className="p-4">
                     <pre className="text-green-300">export GROQ_API_KEY=&quot;your-api-key-here&quot;</pre>
@@ -137,7 +149,9 @@ export default function AIContractGeneration() {
                 <div className="bg-gray-800 rounded-md overflow-hidden">
                   <div className="bg-gray-700 px-4 py-2 flex justify-between items-center">
                     <span className="font-medium text-blue-300">.env file</span>
-                    <CopyButton textToCopy="GROQ_API_KEY=your-api-key-here" />
+                    <div className="w-9 h-9 flex items-center justify-center">
+                      <CopyButton textToCopy="GROQ_API_KEY=your-api-key-here" />
+                    </div>
                   </div>
                   <div className="p-4">
                     <pre className="text-green-300">GROQ_API_KEY=your-api-key-here</pre>

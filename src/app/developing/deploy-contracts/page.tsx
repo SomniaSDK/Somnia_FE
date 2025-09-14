@@ -4,7 +4,7 @@ import CopyButton from '@/components/CopyButton';
 export default function DeployContractsPage() {
   return (
     <div className="max-w-5xl px-6 py-20">
-      <h1 className="text-3xl font-bold mb-6">🚀 Deploy Contracts</h1>
+      <h1 className="text-3xl font-bold mb-6">Deploy Contracts</h1>
       
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-4">Deploying Smart Contracts to Somnia</h2>

@@ -27,7 +27,9 @@ export default function ProjectSetupPage() {
                   <div className="bg-gray-800 p-3 rounded-md my-2">
                     <div className="flex justify-between items-center mb-1">
                       <span className="text-gray-400 text-xs">Terminal</span>
-                      <CopyButton textToCopy="mkdir somnia-project && cd somnia-project" />
+                      <div className="w-9 h-9 flex items-center justify-center">
+                        <CopyButton textToCopy="mkdir somnia-project && cd somnia-project" />
+                      </div>
                     </div>
                     <pre className="text-green-300">mkdir somnia-project && cd somnia-project</pre>
                   </div>
@@ -43,7 +45,9 @@ export default function ProjectSetupPage() {
                   <div className="bg-gray-800 p-3 rounded-md my-2">
                     <div className="flex justify-between items-center mb-1">
                       <span className="text-gray-400 text-xs">Terminal</span>
-                      <CopyButton textToCopy="npm i -g somnia-cli-devkit@latest" />
+                      <div className="w-9 h-9 flex items-center justify-center">
+                        <CopyButton textToCopy="npm i -g somnia-cli-devkit@latest" />
+                      </div>
                     </div>
                     <pre className="text-green-300">npm i -g somnia-cli-devkit@latest</pre>
                   </div>
@@ -59,7 +63,8 @@ export default function ProjectSetupPage() {
                   <div className="bg-gray-800 p-3 rounded-md my-2 relative">
                     <div className="flex justify-between items-center mb-1">
                       <span className="text-gray-400 text-xs">package.json</span>
-                      <CopyButton textToCopy={`{
+                      <div className="w-9 h-9 flex items-center justify-center">
+                        <CopyButton textToCopy={`{
   "name": "somnia-project",
   "version": "1.0.0",
   "description": "Somnia blockchain smart contract project",
@@ -74,6 +79,7 @@ export default function ProjectSetupPage() {
     "@nomicfoundation/hardhat-toolbox": "^6.1.0"
   }
 }`} />
+                      </div>
                     </div>
                     <pre className="text-green-300 overflow-x-auto whitespace-pre-wrap">{`{
   "name": "somnia-project",
@@ -106,7 +112,9 @@ export default function ProjectSetupPage() {
                       <div className="bg-gray-800 p-3 rounded-md">
                         <div className="flex justify-between items-center mb-1">
                           <span className="text-gray-400 text-xs">Terminal</span>
-                          <CopyButton textToCopy="npm install" />
+                          <div className="w-9 h-9 flex items-center justify-center">
+                            <CopyButton textToCopy="npm install" />
+                          </div>
                         </div>
                         <pre className="text-green-300">npm install</pre>
                       </div>
@@ -117,7 +125,9 @@ export default function ProjectSetupPage() {
                       <div className="bg-gray-800 p-3 rounded-md">
                         <div className="flex justify-between items-center mb-1">
                           <span className="text-gray-400 text-xs">Terminal</span>
-                          <CopyButton textToCopy="npm i" />
+                          <div className="w-9 h-9 flex items-center justify-center">
+                            <CopyButton textToCopy="npm i" />
+                          </div>
                         </div>
                         <pre className="text-green-300">npm i</pre>
                       </div>
@@ -128,7 +138,9 @@ export default function ProjectSetupPage() {
                       <div className="bg-gray-800 p-3 rounded-md">
                         <div className="flex justify-between items-center mb-1">
                           <span className="text-gray-400 text-xs">Terminal</span>
-                          <CopyButton textToCopy="npm install --force" />
+                          <div className="w-9 h-9 flex items-center justify-center">
+                            <CopyButton textToCopy="npm install --force" />
+                          </div>
                         </div>
                         <pre className="text-green-300">npm install --force</pre>
                       </div>
@@ -139,7 +151,9 @@ export default function ProjectSetupPage() {
                       <div className="bg-gray-800 p-3 rounded-md">
                         <div className="flex justify-between items-center mb-1">
                           <span className="text-gray-400 text-xs">Terminal</span>
-                          <CopyButton textToCopy="npm install --legacy-peer-deps" />
+                          <div className="relative flex items-center justify-center">
+                            <CopyButton textToCopy="npm install --legacy-peer-deps" />
+                          </div>
                         </div>
                         <pre className="text-green-300">npm install --legacy-peer-deps</pre>
                       </div>

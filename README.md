@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Somnia SDK Documentation
+
+![Somnia SDK](public/file.svg)
+
+## Overview
+
+This repository contains the official documentation for the Somnia SDK, a comprehensive blockchain development platform. The documentation is built with Next.js 15.5.2 and includes guides, examples, and references for developing with the Somnia blockchain ecosystem.
+
+## Features
+
+- **Comprehensive Documentation**: Detailed guides for deploying contracts, calling functions, and network commands
+- **Modern UI**: Clean and responsive interface with dark mode support
+- **Interactive Components**: Code snippets with copy functionality, searchable navigation
+- **Full Markdown Support**: Rich documentation with syntax highlighting
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.x or higher
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/SomniaSDK/Somnia_FE.git
+cd somnia_docs
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The documentation site will be available at `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Documentation Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Introduction**: Overview of the Somnia SDK platform
+- **Project Setup**: Installation and configuration guides
+- **MCP Server**: Model Context Protocol server documentation
+- **Wallet Management**: Working with wallets and transactions
+- **Development**:
+  - AI Contract Generation
+  - Deploying Contracts
+  - Calling Contract Functions
+  - Network Commands
 
-## Learn More
+## Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Build the static site
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start the production server
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+SomniaSDK Team - [https://somniasdk.com](https://somniasdk.com)
+
+---
+
+Built with [Next.js](https://nextjs.org/) and deployed on [Vercel](https://vercel.com/)

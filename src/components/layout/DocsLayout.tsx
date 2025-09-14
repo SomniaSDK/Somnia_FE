@@ -18,7 +18,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             <div className="flex items-center">
               <div className="flex items-center">
                 <Image
-                  src="/Somnia.png"
+                  src="/Somnia_logo_color.png"
                   alt="Somnia Logo"
                   width={28}
                   height={28}
@@ -59,7 +59,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             {/* Introduction section */}
             <div className="mb-8">
               <div className="flex items-center mb-4">
-                <span className="text-red-500 mr-2">📍</span>
+                <span className="text-red-500 mr-2"></span>
                 <h3 className="text-blue-400 font-medium">Introduction</h3>
               </div>
               <ul className="pl-6 space-y-2">
@@ -127,7 +127,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <Image
-                src="/Somnia.png"
+                src="/Somnia_logo_color.png"
                 alt="Somnia Logo"
                 width={24}
                 height={24}
@@ -135,11 +135,10 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
               />
               <span className="ml-2 text-white font-semibold">Somnia SDK</span>
             </div>
-            
+            <div>©️2025 Somnia SDK | All Rights Reserved</div>
             <div className="flex space-x-6">
-              <Link href="/" className="hover:text-white transition-colors">Documentation</Link>
+              <Link href="https://github.com/SomniaSDK/Somnia_FE" className="hover:text-white transition-colors">Documentation</Link>
               <Link href="https://github.com/SomniaSDK" className="hover:text-white transition-colors">GitHub</Link>
-              <Link href="#" className="hover:text-white transition-colors">Support</Link>
             </div>
           </div>
         </div>
