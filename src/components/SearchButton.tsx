@@ -18,32 +18,95 @@ interface NavCategory {
   items: NavItem[];
 }
 
+// Icon component for clean SVG icons
+const IconComponent = ({ type, className = "w-5 h-5" }: { type: string; className?: string }) => {
+  const iconColor = "text-blue-400"; // Website blue color
+  
+  switch (type) {
+    case 'intro':
+      return (
+        <svg className={`${className} ${iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      );
+    case 'setup':
+      return (
+        <svg className={`${className} ${iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      );
+    case 'server':
+      return (
+        <svg className={`${className} ${iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+        </svg>
+      );
+    case 'wallet':
+      return (
+        <svg className={`${className} ${iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+        </svg>
+      );
+    case 'ai':
+      return (
+        <svg className={`${className} ${iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      );
+    case 'deploy':
+      return (
+        <svg className={`${className} ${iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+        </svg>
+      );
+    case 'call':
+      return (
+        <svg className={`${className} ${iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+      );
+    case 'network':
+      return (
+        <svg className={`${className} ${iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9V3m0 0a9 9 0 019 9M12 3a9 9 0 00-9 9" />
+        </svg>
+      );
+    default:
+      return (
+        <svg className={`${className} ${iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      );
+  }
+};
+
 // Navigation data structure that matches the sidebar
 const navigationData: NavCategory[] = [
   {
     name: 'Introduction',
-    icon: '📍',
+    icon: 'intro',
     items: [
       { title: 'Overview', path: '/', description: 'Introduction to Somnia SDK' }
     ]
   },
   {
     name: 'Project Setup',
-    icon: '🔥',
+    icon: 'setup',
     items: [
       { title: 'Installation', path: '/project-setup', description: 'Set up your development environment' }
     ]
   },
   {
     name: 'MCP Server',
-    icon: '💻',
+    icon: 'server',
     items: [
       { title: 'Overview', path: '/mcp-server', description: 'Learn about Model Context Protocol Server' }
     ]
   },
   {
     name: 'Wallet Management',
-    icon: '💳',
+    icon: 'wallet',
     items: [
       { title: 'Importing Wallet', path: '/wallet/importing-wallet', description: 'Import existing wallets' },
       { title: 'Wallet Analysis', path: '/wallet/wallet-analysis', description: 'Analyze wallet balances and transactions' }
@@ -51,12 +114,12 @@ const navigationData: NavCategory[] = [
   },
   {
     name: 'DEVELOPING',
-    icon: '💻',
+    icon: 'server',
     items: [
-      { title: 'AI Contract Generation', path: '/developing/ai-contract', icon: '🤖', description: 'Generate smart contracts with AI' },
-      { title: 'Deploy Contracts', path: '/developing/deploy-contracts', icon: '🚀', description: 'Deploy smart contracts to the blockchain' },
-      { title: 'Call Contract Functions', path: '/developing/call-contract', icon: '📞', description: 'Interact with deployed smart contracts' },
-      { title: 'Network Commands', path: '/developing/network-commands', icon: '🌐', description: 'Manage blockchain network connections' }
+      { title: 'AI Contract Generation', path: '/developing/ai-contract', icon: 'ai', description: 'Generate smart contracts with AI' },
+      { title: 'Deploy Contracts', path: '/developing/deploy-contracts', icon: 'deploy', description: 'Deploy smart contracts to the blockchain' },
+      { title: 'Call Contract Functions', path: '/developing/call-contract', icon: 'call', description: 'Interact with deployed smart contracts' },
+      { title: 'Network Commands', path: '/developing/network-commands', icon: 'network', description: 'Manage blockchain network connections' }
     ]
   }
 ];
@@ -306,7 +369,9 @@ const SearchButton = () => {
                           onMouseEnter={() => setSelectedIndex(index)}
                         >
                           {result.icon && (
-                            <span className="mr-3 text-lg">{result.icon}</span>
+                            <div className="mr-3 flex items-center justify-center">
+                              <IconComponent type={result.icon} className="w-5 h-5" />
+                            </div>
                           )}
                           <div>
                             <div className="font-medium">
@@ -338,7 +403,9 @@ const SearchButton = () => {
                           onClick={() => setQuery(category.name.toLowerCase())}
                           className="text-left p-3 rounded-lg bg-[#25272f] hover:bg-[#2a2d37] text-white transition-colors flex items-center"
                         >
-                          <span className="mr-2 text-xl">{category.icon}</span>
+                          <div className="mr-3 flex items-center justify-center">
+                            <IconComponent type={category.icon} className="w-6 h-6" />
+                          </div>
                           <div>
                             <div className="font-medium">{category.name}</div>
                             <div className="text-sm text-gray-400">{category.items.length} {category.items.length === 1 ? 'page' : 'pages'}</div>
