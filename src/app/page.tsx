@@ -105,7 +105,7 @@ const somnia = new Somnia({
 
           <div className="bg-[#1a1c25] p-6 rounded-lg border border-gray-800">
             <h3 className="text-xl font-semibold mb-4">Basic Usage</h3>
-            <p className="text-gray-300 mb-4">Here's a simple example of deploying a contract:</p>
+            <p className="text-gray-300 mb-4">Here&apos;s a simple example of deploying a contract:</p>
             <pre className="bg-[#0f1117] p-4 rounded text-yellow-400 overflow-x-auto">
               <code>{`const contract = await somnia.deployContract({
   name: 'MyContract',
