@@ -248,14 +248,26 @@ const SearchButton = () => {
           </div>
         </button>
       ) : (
-        <div className="fixed inset-0 bg-transparent z-50 flex items-start justify-center pt-12 search-modal backdrop-blur-md">
+        <div 
+          className="fixed inset-0 bg-transparent z-50 flex items-start justify-center pt-12 search-modal backdrop-blur-md cursor-pointer"
+          onClick={(e) => {
+            // Close modal if clicking on the backdrop
+            if (e.target === e.currentTarget) {
+              setIsExpanded(false);
+            }
+          }}
+        >
           <div 
-            className="w-full max-w-xl bg-[#1d1f29]/90 rounded-xl shadow-2xl overflow-hidden search-modal-content border border-gray-800/50 search-expand-animation backdrop-blur-sm"
+            className="w-full max-w-xl bg-[#1d1f29]/90 rounded-xl shadow-2xl overflow-hidden search-modal-content border border-gray-800/50 search-expand-animation backdrop-blur-sm cursor-default"
             style={{
               '--search-original-top': `${buttonPosition.top}px`,
               '--search-original-left': `${buttonPosition.left}px`,
               '--search-original-width': `${buttonPosition.width}px`,
             } as React.CSSProperties}
+            onClick={(e) => {
+              // Prevent event bubbling to backdrop
+              e.stopPropagation();
+            }}
           >
             <div className="flex items-center px-4 py-3">
               <svg className="h-5 w-5 text-gray-400 mr-3" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -271,9 +283,13 @@ const SearchButton = () => {
                 onChange={(e) => setQuery(e.target.value)}
                 autoFocus
               />
-              <div className="ml-2 text-gray-400">
-                <kbd className="px-1.5 py-0.5 text-xs font-semibold text-gray-400 bg-[#25272f] rounded">ESC</kbd>
-              </div>
+              <button 
+                className="ml-2 text-gray-400 hover:text-gray-300 transition-colors"
+                onClick={() => setIsExpanded(false)}
+                title="Close search (ESC)"
+              >
+                <kbd className="px-1.5 py-0.5 text-xs font-semibold text-gray-400 bg-[#25272f] rounded hover:bg-[#2a2d37] transition-colors cursor-pointer">ESC</kbd>
+              </button>
             </div>
             <div className="border-t border-gray-800 px-4 py-6 max-h-[60vh] overflow-y-auto">
               {/* Search results */}
