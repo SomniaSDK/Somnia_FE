@@ -77,6 +77,71 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      {/* Additional content to test scrolling */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-bold mb-6">Getting Started</h2>
+        <div className="space-y-6">
+          <div className="bg-[#1a1c25] p-6 rounded-lg border border-gray-800">
+            <h3 className="text-xl font-semibold mb-4">Installation</h3>
+            <p className="text-gray-300 mb-4">Install the Somnia SDK using npm or yarn:</p>
+            <pre className="bg-[#0f1117] p-4 rounded text-green-400 overflow-x-auto">
+              <code>npm install @somnia/sdk</code>
+            </pre>
+          </div>
+
+          <div className="bg-[#1a1c25] p-6 rounded-lg border border-gray-800">
+            <h3 className="text-xl font-semibold mb-4">Configuration</h3>
+            <p className="text-gray-300 mb-4">Configure your project to use the Somnia network:</p>
+            <pre className="bg-[#0f1117] p-4 rounded text-blue-400 overflow-x-auto">
+              <code>{`import { Somnia } from '@somnia/sdk';
+
+const somnia = new Somnia({
+  network: 'mainnet', // or 'testnet'
+  apiKey: 'your-api-key'
+});`}</code>
+            </pre>
+          </div>
+
+          <div className="bg-[#1a1c25] p-6 rounded-lg border border-gray-800">
+            <h3 className="text-xl font-semibold mb-4">Basic Usage</h3>
+            <p className="text-gray-300 mb-4">Here's a simple example of deploying a contract:</p>
+            <pre className="bg-[#0f1117] p-4 rounded text-yellow-400 overflow-x-auto">
+              <code>{`const contract = await somnia.deployContract({
+  name: 'MyContract',
+  code: contractCode,
+  args: [initialValue]
+});
+
+console.log('Contract deployed at:', contract.address);`}</code>
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      {/* More content sections */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-bold mb-6">Advanced Features</h2>
+        <div className="space-y-8">
+          {Array.from({ length: 5 }, (_, i) => (
+            <div key={i} className="bg-[#1a1c25] p-6 rounded-lg border border-gray-800">
+              <h3 className="text-xl font-semibold mb-4">Feature {i + 1}: Advanced Capability</h3>
+              <p className="text-gray-300 mb-4">
+                This is a detailed explanation of an advanced feature in the Somnia SDK. 
+                It demonstrates the powerful capabilities and flexibility of the platform.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua.
+              </p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <li>High-performance transaction processing</li>
+                <li>Sub-second finality guarantees</li>
+                <li>EVM compatibility for seamless migration</li>
+                <li>Advanced gas optimization techniques</li>
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

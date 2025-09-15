@@ -8,9 +8,9 @@ import SearchButton from '../SearchButton';
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-sans min-h-screen flex flex-col">
+    <div className="font-sans h-screen flex flex-col">
       {/* Navbar */}
-      <header className="w-full bg-[#131520] text-white sticky top-0 z-40">
+      <header className="w-full bg-[#131520] text-white sticky top-0 z-40 flex-shrink-0">
         {/* Top row with logo, search and github */}
         <div className="w-full pl-4 pr-6">
           <div className="h-14 flex items-center justify-between">
@@ -52,9 +52,9 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
       </header>
 
       {/* Main content area with sidebar */}
-      <main className="flex-1 bg-[#0f1117] text-white flex">
+      <main className="flex-1 bg-[#0f1117] text-white flex overflow-hidden">
         {/* Sidebar */}
-        <div className="w-64 bg-[#131520] min-h-screen border-r border-gray-800 flex-shrink-0">
+        <div className="w-64 bg-[#131520] border-r border-gray-800 flex-shrink-0 overflow-y-auto sidebar-scroll">
           <div className="py-6 px-4">
             {/* Introduction section */}
             <div className="mb-8">
@@ -116,33 +116,37 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
         </div>
         
         {/* Main content */}
-        <div className="flex-1">
-          {children}
-        </div>
-      </main>
-      
-      {/* Footer */}
-      <footer className="bg-[#131520] text-gray-400 py-8 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center mb-4 md:mb-0">
-              <Image
-                src="/new.png"
-                alt="Somnia Logo"
-                width={24}
-                height={24}
-                className="h-6 w-6"
-              />
-              <span className="ml-2 text-white font-semibold">Somnia SDK</span>
+        <div className="flex-1 overflow-y-auto main-content-scroll">
+          <div className="flex flex-col min-h-full">
+            <div className="flex-1">
+              {children}
             </div>
-            <div>©️2025 Somnia SDK | All Rights Reserved</div>
-            <div className="flex space-x-6">
-              <Link href="https://github.com/SomniaSDK/Somnia_FE" className="hover:text-white transition-colors">Documentation</Link>
-              <Link href="https://github.com/SomniaSDK" className="hover:text-white transition-colors">GitHub</Link>
-            </div>
+            
+            {/* Footer - now inside main content area */}
+            <footer className="bg-[#131520] text-gray-400 py-8 border-t border-gray-800 mt-auto">
+              <div className="max-w-7xl mx-auto px-6">
+                <div className="flex flex-col md:flex-row justify-between items-center">
+                  <div className="flex items-center mb-4 md:mb-0">
+                    <Image
+                      src="/new.png"
+                      alt="Somnia Logo"
+                      width={24}
+                      height={24}
+                      className="h-6 w-6"
+                    />
+                    <span className="ml-2 text-white font-semibold">Somnia SDK</span>
+                  </div>
+                  <div>©️2025 Somnia SDK | All Rights Reserved</div>
+                  <div className="flex space-x-6">
+                    <Link href="https://github.com/SomniaSDK/Somnia_FE" className="hover:text-white transition-colors">Documentation</Link>
+                    <Link href="https://github.com/SomniaSDK" className="hover:text-white transition-colors">GitHub</Link>
+                  </div>
+                </div>
+              </div>
+            </footer>
           </div>
         </div>
-      </footer>
+      </main>
     </div>
   );
 }
